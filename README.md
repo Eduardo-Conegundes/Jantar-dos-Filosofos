@@ -1,17 +1,7 @@
 # Jantar-dos-filosofos
 Desafio do jantar dos filósofos para disciplina de SO
 
-## Getting Started
+## Esquema Utilizado para criação do código
+![Esquema-JantarDosFilosofos](https://user-images.githubusercontent.com/45373897/114467847-e3095d80-9bc0-11eb-814c-6a405146be59.jpg)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-## Dependency Management
-
-The `JAVA DEPENDENCIES` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-pack/blob/master/release-notes/v0.9.0.md#work-with-jar-files-directly).
