@@ -1,23 +1,22 @@
 package src;
 
-/*
-Cinco fil贸sofos est茫o sentados em uma mesa redonda para jantar. 
-Cada fil贸sofo tem um prato com espaguete 脿 sua frente. 
-Cada prato possui um garfo para pegar o espaguete. 
-O espaguete est谩 muito escorregadio e, para que um fil贸sofo consiga comer, 
-ser谩 necess谩rio utilizar dois garfos. 
+public class Main {
 
-Lembre-se que 茅 apenas uma analogia. Nesse sentido, cada fil贸sofo alterna entre duas tarefas: 
-comer ou pensar. Quando um fil贸sofo fica com fome, ele tenta pegar os garfos 脿 sua esquerda e 
-脿 sua direita; um de cada vez, independente da ordem. Caso ele consiga pegar dois garfos, 
-ele come durante um determinado tempo e depois recoloca os garfos na mesa. Em seguida ele volta a pensar.
-*/
+	private static void init(Mesa mesa) {
+		String nome[] = {"S骳rates", "Plat鉶","Arist髏eles","Maquiavel", "Descartes"};
+		for (int i = 0; i < 5; i++) {
+			new Filosofo(mesa, i, nome[i]).start();
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		Mesa mesa = new Mesa();
+		
+		init(mesa);
+		
+		
 
-public class Main{
-    public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
-
-        
-    }
-  }
-  
+		
+	}
+}

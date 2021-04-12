@@ -1,40 +1,60 @@
 package src;
 
-/*
-Cinco filósofos estão sentados em uma mesa redonda para jantar. 
-Cada filósofo tem um prato com espaguete à sua frente. 
-Cada prato possui um garfo para pegar o espaguete. 
-O espaguete está muito escorregadio e, para que um filósofo consiga comer, 
-será necessário utilizar dois garfos. 
-
-Lembre-se que é apenas uma analogia. Nesse sentido, cada filósofo alterna entre duas tarefas: 
-comer ou pensar. Quando um filósofo fica com fome, ele tenta pegar os garfos à sua esquerda e 
-à sua direita; um de cada vez, independente da ordem. Caso ele consiga pegar dois garfos, 
-ele come durante um determinado tempo e depois recoloca os garfos na mesa. Em seguida ele volta a pensar.
-*/
-
 public class Filosofo extends Thread{
 
-    private int id;
-
-    public void Filosofo(){
-      
-    }
-
-    
-    public void run() {
-        
-    }
-
-    void comer(){
-
-    }
-
-    void pensar(){
-
-        
-    }
-
-
-
+	private int id;
+	private String nome;
+	private Mesa mesa;
+	
+	
+	public Filosofo(Mesa mesa, int id, String nome) {
+		this.mesa = mesa;
+		this.id = id;
+		this.nome = nome;
+	}
+	
+	public void run(){
+		while(true) {
+			this.pensar();
+			this.tentarComer();
+		}
+	}
+	
+	private void pensar() {
+		System.out.println(nome + " Esta pensando...\n");
+		try {
+			sleep((this.id + 1) * 1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	private synchronized void tentarComer() {
+		System.out.println(nome + " Esta tentando comer.");
+		if(mesa.podePegarOs2(this.id, this.nome)){
+			mesa.pegarGarfoDireito(this.id, this.nome);
+			mesa.pegarGarfoEsquerdo(this.id, this.nome);
+			comer();
+			retornarGarfos();
+		}else{
+			System.out.println(nome + " NAO conseguiu comer");
+		}
+	}
+	
+	private void comer() {
+		System.out.println(nome + " Esta comendo....\n");
+		try {
+			sleep((this.id + 1) * 3000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void retornarGarfos() {
+		
+		mesa.retornarGarfos(this.id, this.nome);
+	}
+	
+	
 }
