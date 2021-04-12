@@ -8,15 +8,15 @@ public class Main {
 			new Filosofo(mesa, i, nome[i]).start();
 		}
 	}
-	
-	public static void main(String[] args) {
-		
-		Mesa mesa = new Mesa();
-		
-		init(mesa);
-		
-		
 
-		
+	public static void main(String[] args) {
+
+		Mesa mesa = new Mesa();
+
+		init(mesa);
+
+
+
+
 	}
 }

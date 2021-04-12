@@ -25,12 +25,12 @@ public class Mesa {
 		return this.garfos[id+1];
 	}
 
-	private void retornarGarfoDireito(int id) {
+	private void devolverGarfoDireito(int id) {
 		this.garfos[id] = true;
 	}
 
 
-	private void retornarGarfoEsquerdo(int id) {
+	private void devolverGarfoEsquerdo(int id) {
 
 		if(id == 4) {
 
@@ -41,7 +41,7 @@ public class Mesa {
 		}
 	}
 
-	public synchronized boolean podePegarOs2(int id, String nome){
+	public synchronized boolean PegaOs2(int id, String nome){
 		int idnomedir;
 		int idnomeesq;
 		if(id == 0) {
@@ -51,7 +51,7 @@ public class Mesa {
 
 			idnomedir = id-1;
 		}
-		
+
 		if(id == 4) {
 
 			idnomeesq = 0;
@@ -69,11 +69,10 @@ public class Mesa {
 		return true;
 	}
 
-	/*<--METODOS PUBLICOS-->*/
 
 	public synchronized boolean pegarGarfoDireito(int id, String nome) {
 		if(this.garfos[id] == false){
-			System.err.println("garfo ESQUERDO esta sendo usado -TEM ALGO ERRADO BROW-");
+			System.err.println("garfo ESQUERDO esta sendo usado, algo deu errado!!!");
 			return false;
 		}else{
 			this.garfos[id] = false;
@@ -93,7 +92,7 @@ public class Mesa {
 		}
 
 		if(this.garfos[id_] == false){
-			System.err.println("garfo DIREITO esta sendo usado -TEM ALGO ERRADO BROW-");
+			System.err.println("garfo DIREITO esta sendo usado, algo deu errado!!!");
 			return false;
 		}else{
 			this.garfos[id_] = false;
@@ -102,10 +101,10 @@ public class Mesa {
 		}
 	}
 
-	public synchronized void retornarGarfos(int id, String nome) {
+	public synchronized void devolverGarfos(int id, String nome) {
 
-		retornarGarfoEsquerdo(id);
-		retornarGarfoDireito(id);
+		devolverGarfoEsquerdo(id);
+		devolverGarfoDireito(id);
 
 		System.out.println(nome +" Retornou os Garfos");
 
